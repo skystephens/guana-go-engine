@@ -13,7 +13,7 @@ if (!process.env.GEMINI_API_KEY || !process.env.AIRTABLE_API_KEY || !process.env
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 async function generarCotizacion(datosUsuario, preciosAirtable) {
- const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   // Intentamos extraer el número de personas del texto (ej: "20 personas" -> "20")
   const cantidadPersonas = datosUsuario.match(/\d+/)?.[0] || "1";
