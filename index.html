@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guana Go - Asistente IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-emerald: #00a884;
+            --dark-emerald: #005c4b;
+            --bg-gray: #f0f2f5;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-gray); 
+            margin: 0; 
+            display: flex; 
+            justify-content: center;
+        }
+
+        /* Contenedor tipo Celular (Mobile First) */
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Encabezado del PDF */
+        .header {
+            background: linear-gradient(135deg, var(--primary-emerald), var(--dark-emerald));
+            color: white;
+            padding: 25px 20px;
+            text-align: left;
+        }
+
+        .header h1 { margin: 0; font-size: 24px; }
+        .header p { margin: 5px 0 0; opacity: 0.9; font-size: 14px; }
+
+        .balance-card {
+            background: rgba(255,255,255,0.2);
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Categorías del PDF (Tours, Hoteles, Taxis...) */
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            padding: 15px;
+            gap: 15px;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+            cursor: pointer;
+        }
+
+        .cat-icon {
+            width: 50px;
+            height: 50px;
+            background: #e7fce3;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-emerald);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .cat-item span { font-size: 12px; color: #666; font-weight: 500; }
+
+        /* Área de Chat / Cotización */
+        #chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f9f9f9;
+        }
+
+        .msg { padding: 12px 16px; border-radius: 15px; max-width: 85%; font-size: 14px; line-height: 1.5; }
+        .bot { background: white; align-self: flex-start; border: 1px solid #eee; color: #333; }
+        .user { background: var(--primary-emerald); color: white; align-self: flex-end; }
+
+        /* Barra de Entrada */
+        .input-area {
+            padding: 15px;
+            background: white;
+            display: flex;
+            border-top: 1px solid #eee;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .btn-send {
+            background: var(--primary-emerald);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Botón Flotante QR del PDF */
+        .qr-button {
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            background: var(--dark-emerald);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #cart-action {
+            display: none; /* Oculto por defecto */
+            margin: 10px 20px;
+            padding: 15px;
+            background: #ff9800; /* Color naranja para resaltar */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <p>¡Hola, Viajero!</p>
+        <h1>Guana Go</h1>
+        <div class="balance-card">
+            <span>SALDO PUNTOS</span>
+            <strong>2.500 SGUANA</strong>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-umbrella-beach"></i></div><span>Tours</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-hotel"></i></div><span>Hoteles</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-taxi"></i></div><span>Taxis</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-utensils"></i></div><span>Comida</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-shopping-bag"></i></div><span>Tienda</span></div>
+    </div>
+
+    <div id="chat-box">
+        <div class="msg bot">¡Bienvenido a San Andrés! Soy tu asistente de <strong>GuiaSAI</strong>. ¿Qué experiencia quieres vivir hoy?</div>
+    </div>
+
+    <div id="cart-action" onclick="irAlCarrito()">
+        🛒 AÑADIR AL CARRITO - TOTAL: $<span id="btn-total">0</span>
+    </div>
+
+    <div class="qr-button">
+        <i class="fas fa-qrcode"></i> ESCANEAR QR
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ej: Cotizar tour para 20 personas...">
+        <button class="btn-send" onclick="enviar()">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    let carritoTemporal = null;
+
+    async function enviar() {
+        console.log("Botón presionado. Enviando mensaje...");
+        const input = document.getElementById('userInput');
+        const chatBox = document.getElementById('chat-box');
+        const btnCart = document.getElementById('cart-action');
+        const btnTotalText = document.getElementById('btn-total');
+
+        const mensaje = input.value.trim();
+        if(!mensaje) return;
+
+        // 1. Mostrar mensaje del usuario y ocultar botón anterior
+        chatBox.innerHTML += `<div class="msg user">${mensaje}</div>`;
+        btnCart.style.display = 'none';
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        try {
+            const res = await fetch('/cotizar', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ mensaje: mensaje })
+            });
+            const data = await res.json();
+            
+            // 2. Separar el texto de los datos ocultos [DATA]...[/DATA]
+            const textoLimpio = data.respuesta.split('[DATA]')[0];
+            const rawData = data.respuesta.match(/\[DATA\]([\s\S]*?)\[\/DATA\]/);
+
+            // 3. Mostrar respuesta de la IA (sin el bloque técnico)
+            chatBox.innerHTML += `<div class="msg bot">${textoLimpio}</div>`;
+
+            // 4. Si hay datos de compra, activar el botón
+            if (rawData && rawData[1]) {
+                carritoTemporal = JSON.parse(rawData[1]);
+                if (carritoTemporal.total > 0) {
+                    btnTotalText.innerText = carritoTemporal.total.toLocaleString();
+                    btnCart.style.display = 'block';
+                }
+            }
+        } catch (e) {
+            chatBox.innerHTML += `<div class="msg bot" style="color:red;">Error de conexión.</div>`;
+        }
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function irAlCarrito() {
+        alert(`¡Éxito! Has añadido "${carritoTemporal.resumen}" al carrito.\nTotal: $${carritoTemporal.total}\nProcediendo a pasarela de pagos...`);
+        // Aquí es donde luego conectarás con PayU
+    }
+
+    document.getElementById('userInput').addEventListener('keypress', (e) => {
+        if(e.key === 'Enter') enviar();
+    });
+</script>
+
+</body>
+</html>
