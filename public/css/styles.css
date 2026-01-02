@@ -1,0 +1,286 @@
+/* Paleta de Colores Guana Go */
+:root {
+    --caribe-blue: #00B4DB;
+    --deep-ocean: #0083B0;
+    --sand-gold: #f4d03f;
+    --white: #ffffff;
+    --light-gray: #f7f9fb;
+
+    /* Alias para compatibilidad con código anterior */
+    --primary-emerald: var(--caribe-blue);
+    --dark-emerald: var(--deep-ocean);
+    --bg-gray: var(--light-gray);
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--bg-gray); 
+    margin: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor del Chat (El Cotizador) */
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    height: 80vh;
+    background: var(--white);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+    position: relative;
+}
+
+/* Cabezote del Chat */
+.header {
+    background: linear-gradient(135deg, var(--caribe-blue), var(--deep-ocean));
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header h1 { margin: 0; font-size: 24px; }
+.header p { margin: 5px 0 0; opacity: 0.9; font-size: 14px; }
+
+.balance-card {
+    background: rgba(255,255,255,0.2);
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Categorías del PDF (Tours, Hoteles, Taxis...) */
+.categories {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    gap: 15px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    cursor: pointer;
+}
+
+.cat-icon {
+    width: 50px;
+    height: 50px;
+    background: #e7fce3;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-emerald);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.cat-item span { font-size: 12px; color: #666; font-weight: 500; }
+
+/* Área donde aparecen los mensajes */
+#chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--light-gray);
+}
+
+/* Burbujas de Mensaje */
+.message { 
+    padding: 10px 15px; 
+    border-radius: 15px; 
+    font-size: 14px; 
+    line-height: 1.4;
+    max-width: 85%; 
+}
+
+.ai-message { 
+    background: white; 
+    color: #333; 
+    align-self: flex-start; 
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-message { 
+    background: var(--caribe-blue); 
+    color: white; 
+    align-self: flex-end; 
+    border-bottom-right-radius: 2px;
+}
+
+/* Barra de Entrada */
+.input-area {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+}
+
+.btn-send {
+    background: var(--caribe-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+}
+
+.btn-send:hover {
+    background: var(--deep-ocean);
+}
+
+/* Botón Flotante QR del PDF */
+.qr-button {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    background: var(--dark-emerald);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#cart-action {
+    display: none; /* Oculto por defecto */
+    margin: 10px 20px;
+    padding: 15px;
+    background: #ff9800; /* Color naranja para resaltar */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- ESTILOS B2B (ALIADOS) --- */
+
+.section-b2b { padding: 20px; text-align: center; }
+.section-b2b h2 { font-size: 18px; color: #333; margin-bottom: 10px; }
+.section-b2b p { font-size: 13px; color: #666; line-height: 1.4; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature-card i { font-size: 24px; color: var(--primary-emerald); margin-bottom: 10px; }
+.feature-card h3 { font-size: 14px; margin: 5px 0; }
+.feature-card p { font-size: 11px; color: #777; margin: 0; }
+
+.pricing-container {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 20px;
+    overflow-x: auto;
+}
+
+.price-card {
+    flex: 1;
+    min-width: 140px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background: white;
+}
+
+.price-card.gold {
+    border: 2px solid #ffd700;
+    background: #fffdf5;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #333;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+
+.price { font-size: 20px; font-weight: bold; color: var(--dark-emerald); margin: 10px 0; }
+.price-card ul { list-style: none; padding: 0; text-align: left; font-size: 12px; color: #555; }
+.price-card li { margin-bottom: 5px; }
+.price-card li::before { content: "✓"; color: var(--primary-emerald); margin-right: 5px; }
+
+.form-container { padding: 20px; background: #f0f2f5; }
+.form-container h2 { font-size: 18px; margin-bottom: 15px; }
+
+#partnerForm input, #partnerForm select {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+.btn-partner {
+    width: 100%;
+    padding: 12px;
+    background: var(--dark-emerald);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guana Go - Portal Aliados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Estilos específicos para Aliados (puedes moverlos a styles.css luego) */
+        .header { background: linear-gradient(135deg, #2c3e50, #4ca1af); } /* Diferente color para B2B */
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <p>Potencia tu negocio con IA</p>
+        <h1>Guana Partner 🌴</h1>
+    </div>
+
+    <div class="section-b2b">
+        <h2>Únete a la Red Raizal Digital</h2>
+        <p>No somos solo una web de viajes, somos tu nuevo motor de ventas impulsado por Inteligencia Artificial.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visibilidad Mapbox</h3>
+                <p>Aparece en el mapa inteligente de los turistas.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-coins"></i>
+                <h3>Guana Points</h3>
+                <p>Fideliza clientes regalando puntos de nuestra red.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-container">
+        <div class="price-card">
+            <h3>BRONCE</h3>
+            <div class="price">Gratis</div>
+            <ul>
+                <li>Presencia en Directorio</li>
+                <li>Soporte Básico</li>
+            </ul>
+        </div>
+        <div class="price-card gold">
+            <div class="badge">RECOMENDADO</div>
+            <h3>ORO VIP</h3>
+            <div class="price">Consultar</div>
+            <ul>
+                <li>Recomendación Prioritaria IA</li>
+                <li>Icono Especial en Mapbox</li>
+                <li>Gestión de Guana Points</li>
+                <li>Habladores QR para mesas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Solicitar Vinculación</h2>
+        <form id="partnerForm">
+            <input type="text" id="businessName" placeholder="Nombre del Negocio" required>
+            <select id="businessType">
+                <option value="hotel">Alojamiento</option>
+                <option value="restaurante">Restaurante</option>
+                <option value="tour">Operador de Tour</option>
+            </select>
+            <input type="email" id="partnerEmail" placeholder="Correo Corporativo" required>
+            <button type="submit" class="btn-partner">Empezar Ahora</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/api-make.js"></script>
+<script>
+    document.getElementById('partnerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const negocio = document.getElementById('businessName').value;
+        const tipo = document.getElementById('businessType').value;
+        const email = document.getElementById('partnerEmail').value;
+        
+        // Construimos el mensaje para enviarlo a la función existente en api-make.js
+        const mensajeParaIA = `SOLICITUD DE ALIANZA B2B: Negocio: ${negocio}, Tipo: ${tipo}, Email: ${email}`;
+
+        try {
+            // Usamos la función que ya tienes definida en api-make.js
+            // Enviamos el email como ID para identificar al socio
+            await enviarMensajeIA(mensajeParaIA, email);
+            alert("¡Solicitud enviada! Guana Go se pondrá en contacto pronto.");
+            document.getElementById('partnerForm').reset();
+        } catch (error) {
+            alert("Hubo un error al enviar la solicitud. Intenta nuevamente.");
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guana Go - Asistente IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Enlace a tu nuevo archivo CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="app-container">
+    <div class="header">
+        <p>¡Hola, Viajero!</p>
+        <h1>Guana Go</h1>
+        <div class="balance-card">
+            <span>SALDO PUNTOS</span>
+            <strong>2.500 SGUANA</strong>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-umbrella-beach"></i></div><span>Tours</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-hotel"></i></div><span>Hoteles</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-taxi"></i></div><span>Taxis</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-utensils"></i></div><span>Comida</span></div>
+        <div class="cat-item"><div class="cat-icon"><i class="fas fa-shopping-bag"></i></div><span>Tienda</span></div>
+    </div>
+
+    <div id="chat-box">
+        <div class="message ai-message">¡Bienvenido a San Andrés! Soy tu asistente de <strong>GuiaSAI</strong>. ¿Qué experiencia quieres vivir hoy?</div>
+    </div>
+
+    <div id="cart-action" onclick="irAlCarrito()">
+        🛒 AÑADIR AL CARRITO - TOTAL: $<span id="btn-total">0</span>
+    </div>
+
+    <div class="qr-button">
+        <i class="fas fa-qrcode"></i> ESCANEAR QR
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ej: Cotizar tour para 20 personas...">
+        <button id="send-btn" class="btn-send">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Scripts: El orden es importante. Primero la API, luego la lógica principal -->
+<script src="/js/api-make.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+</html>

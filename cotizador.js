@@ -12,14 +12,49 @@ if (!process.env.GROQ_API_KEY || !process.env.AIRTABLE_API_KEY || !process.env.A
 // Se utiliza process.env.GROQ_API_KEY cargada desde el archivo .env
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-async function generarCotizacion(datosUsuario, preciosAirtable) {
-  // Filtramos para enviar solo datos útiles
-  const serviciosValidos = preciosAirtable.filter(s => s.precio > 0 && s.servicio);
+async function generarCotizacion(mensajesAnteriores, preciosAirtable) {
+  // 1. AUMENTAMOS EL LÍMITE: Ahora que los datos son limpios, enviamos hasta 40 servicios
+  const serviciosValidos = preciosAirtable
+    .filter(s => s.precio > 0 && s.servicio)
+    .slice(0, 40);
 
-  const prompt = `Eres Guana Go, experto en San Andrés. 
-  Usa este inventario: ${JSON.stringify(serviciosValidos.slice(0, 15))}
-  Pregunta del turista: "${datosUsuario}"
-  Responde corto, con precios y emojis.`;
+  const ahora = new Date();
+  const fechaHoy = ahora.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long' });
+  const fechaUsuario = "fecha deseada";
+
+  // 1. Convertimos el historial en texto para que la IA lo lea
+  const contextoHistorial = mensajesAnteriores.map(m => 
+    `${m.role === 'user' ? 'Turista' : 'Guana Go'}: ${m.content}`
+  ).join('\n');
+
+  const prompt = `
+    Eres Guana Go, el anfitrión oficial de San Andrés. 🌴
+    
+    🚨 REGLA DE ORO #1 (PROHIBIDO OLVIDAR): 
+    - HOY ES ${fechaHoy}.
+    - NO SE PUEDE RESERVAR NADA PARA HOY. NADA. 
+    - Si el usuario pregunta por "hoy", tu respuesta DEBE EMPEZAR así: "¡Hola! Qué nota que nos escribas, pero por logística y seguridad, las reservas de hoy ya están cerradas 🚫. ¡Pero no te preocupes, que para mañana o el resto de tu viaje estamos listos!"
+
+    📅 REGLA DE ORO #2 (CALENDARIO DE NOCHE BLANCA):
+    - La Noche Blanca (Caribbean Night) SOLO OPERA LOS VIERNES. 
+    - Si hoy es viernes ${fechaHoy}, la próxima Noche Blanca disponible es el PRÓXIMO VIERNES. 
+    - NO digas que opera todos los días. Es un evento exclusivo de los viernes.
+
+     CÁLCULO DE GRUPO (2 Adultos + 1 Niño de 4 años):
+    - 2 Adultos: $585.000 COP
+    - 1 Niño (4 años entra en tarifa 3-8 años): $224.250 COP
+    - TOTAL: $809.250 COP. (Muestra siempre el total sumado).
+
+    💬 COMPORTAMIENTO:
+    - No repitas lo que ya hablamos. 
+    - Si el usuario pregunta por el 28 de diciembre (que es domingo), dile: "El 28 es domingo y la Noche Blanca es solo los viernes. ¿Te gustaría el Yate Rumba para ese domingo?"
+
+    HISTORIAL:
+    ${contextoHistorial}
+
+    INVENTARIO:
+    ${JSON.stringify(serviciosValidos.slice(0, 30))}
+  `;
 
   const chatCompletion = await groq.chat.completions.create({
     messages: [{ role: "user", content: prompt }],
@@ -81,9 +116,12 @@ async function ejecutarCotizadorReal(preguntaCliente) {
         // FILTRO: Solo enviamos servicios con precio y nombre válido
         const serviciosLimpios = preciosActuales.filter(s => s.precio > 0 && s.servicio !== "Sin nombre");
 
+        // Adaptamos la entrada simple a un historial para la nueva función
+        const historial = [{ role: 'user', content: preguntaCliente }];
+
         // 2. Llamar a la función de Gemini que creamos en el paso anterior
-        // Pasa la pregunta del cliente y los precios reales
-        const cotizacion = await generarCotizacion(preguntaCliente, serviciosLimpios);
+        // Pasa el historial y los precios reales
+        const cotizacion = await generarCotizacion(historial, serviciosLimpios);
         return cotizacion;
     } catch (error) {
         console.error("❌ Error en el proceso:", error);
