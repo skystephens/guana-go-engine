@@ -1,0 +1,175 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+        "categoria": "Aeropuerto",
+        "plan": "Premium",
+        "direccion": "Norte, San Andrés",
+        "telefono": "+57 8 5137000",
+        "foto": "https://via.placeholder.com/150?text=Aeropuerto",
+        "id_slug": "aeropuerto-san-andres",
+        "promo": "Bienvenido a San Andrés"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3871, 12.5847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Bahía Sonora",
+        "categoria": "Restaurante",
+        "plan": "Premium",
+        "direccion": "Avenida de las Américas, San Andrés",
+        "telefono": "+57 8 5125000",
+        "foto": "https://via.placeholder.com/150?text=Bahia+Sonora",
+        "id_slug": "bahia-sonora",
+        "promo": "Pescado fresco diariamente"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3853, 12.5823]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Hotel Decameron San Andrés",
+        "categoria": "Hotel",
+        "plan": "Premium",
+        "direccion": "Calle 1 Sur, San Andrés",
+        "telefono": "+57 8 5128000",
+        "foto": "https://via.placeholder.com/150?text=Decameron",
+        "id_slug": "hotel-decameron",
+        "promo": "All-inclusive tropical"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3805, 12.5820]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Miss Triní (Desayuno Típico)",
+        "categoria": "Cafeteria",
+        "plan": "Estándar",
+        "direccion": "Calle Principal, Centro",
+        "telefono": "+57 8 5134500",
+        "foto": "https://via.placeholder.com/150?text=Miss+Trin",
+        "id_slug": "miss-trini",
+        "promo": "Desayuno típico colombiano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3830, 12.5850]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Playa Spratt Bight",
+        "categoria": "Playa",
+        "plan": "Gratis",
+        "direccion": "Centro, San Andrés",
+        "telefono": "",
+        "foto": "https://via.placeholder.com/150?text=Playa+Spratt",
+        "id_slug": "playa-spratt-bight",
+        "promo": "Arena blanca y aguas cristalinas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3812, 12.5860]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Coco Art",
+        "categoria": "Tienda",
+        "plan": "Estándar",
+        "direccion": "Avenida Colombia, San Andrés",
+        "telefono": "+57 8 5120000",
+        "foto": "https://via.placeholder.com/150?text=Coco+Art",
+        "id_slug": "coco-art",
+        "promo": "Artesanías y souvenirs"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3840, 12.5890]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Rondón Tour",
+        "categoria": "Tour",
+        "plan": "Premium",
+        "direccion": "Centro Turístico, San Andrés",
+        "telefono": "+57 8 5140000",
+        "foto": "https://via.placeholder.com/150?text=Rondon+Tour",
+        "id_slug": "rondon-tour",
+        "promo": "Tours marinos y terrestres"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3818, 12.5875]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Hospital Clínica San Andrés",
+        "categoria": "Hospital",
+        "plan": "Estándar",
+        "direccion": "Avenida de la Salud, San Andrés",
+        "telefono": "+57 8 5128888",
+        "foto": "https://via.placeholder.com/150?text=Hospital",
+        "id_slug": "hospital-san-andres",
+        "promo": "Emergencias 24/7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3860, 12.5830]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Gasolinera Petrolatina",
+        "categoria": "Gasolinera",
+        "plan": "Estándar",
+        "direccion": "Carretera Principal, San Andrés",
+        "telefono": "+57 8 5125555",
+        "foto": "https://via.placeholder.com/150?text=Gasolinera",
+        "id_slug": "gasolinera-petrolatina",
+        "promo": "Gasolina e hidrocarburos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3875, 12.5810]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "storeName": "Iglesia Inmaculada Concepción",
+        "categoria": "Iglesia",
+        "plan": "Gratis",
+        "direccion": "Centro Histórico, San Andrés",
+        "telefono": "+57 8 5130000",
+        "foto": "https://via.placeholder.com/150?text=Iglesia",
+        "id_slug": "iglesia-inmaculada",
+        "promo": "Patrimonio cultural"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.3825, 12.5865]
+      }
+    }
+  ]
+}

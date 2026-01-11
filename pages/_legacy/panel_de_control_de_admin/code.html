@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Panel Control Admin (Modo Oscuro)</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#16a34a", // Green
+            secondary: "#f59e0b", // Yellow
+            danger: "#dc2626", // Red
+            "background-light": "#f5f7f8",
+            "background-dark": "#121212",
+            "surface-dark": "#1e1e1e",
+          },
+          fontFamily: {
+            display: ["Plus Jakarta Sans"],
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div>
+<header class="flex items-center justify-between p-4 bg-background-dark">
+<button class="flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl"> menu </span>
+</button>
+<h1 class="text-lg font-bold text-white">Panel</h1>
+<button class="flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl"> notifications </span>
+</button>
+</header>
+<main class="p-4">
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="rounded-xl bg-surface-dark p-4">
+<p class="text-sm font-medium text-primary">Tours activos</p>
+<p class="text-3xl font-bold text-white">12</p>
+<p class="text-sm font-medium text-green-500">+10%</p>
+</div>
+<div class="rounded-xl bg-surface-dark p-4">
+<p class="text-sm font-medium text-secondary">Próximas reservas</p>
+<p class="text-3xl font-bold text-white">35</p>
+<p class="text-sm font-medium text-green-500">+5%</p>
+</div>
+<div class="rounded-xl bg-surface-dark p-4">
+<p class="text-sm font-medium text-danger">Nuevos mensajes</p>
+<p class="text-3xl font-bold text-white">5</p>
+<p class="text-sm font-medium text-red-500">-2%</p>
+</div>
+</div>
+<h2 class="mt-8 mb-4 text-2xl font-bold text-white">Resumen</h2>
+<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+<div class="rounded-xl border border-white/10 bg-surface-dark p-6">
+<p class="text-base font-medium text-white">Reservas por mes</p>
+<p class="text-4xl font-bold text-white">150</p>
+<div class="flex items-center gap-2">
+<p class="text-sm text-white/70">Este mes</p>
+<p class="text-sm font-medium text-green-500">+15%</p>
+</div>
+<div class="mt-6 grid h-48 grid-flow-col items-end justify-items-center gap-4 px-2">
+<div class="w-full rounded-t bg-primary/40" style="height: 30%"></div>
+<div class="w-full rounded-t bg-primary/40" style="height: 90%"></div>
+<div class="w-full rounded-t bg-primary/40" style="height: 70%"></div>
+<div class="w-full rounded-t bg-primary/40" style="height: 70%"></div>
+<div class="w-full rounded-t bg-primary/40" style="height: 90%"></div>
+</div>
+<div class="mt-2 grid grid-flow-col justify-items-center gap-4 px-2">
+<p class="text-xs font-bold text-white/70">Ene</p>
+<p class="text-xs font-bold text-white/70">Feb</p>
+<p class="text-xs font-bold text-white/70">Mar</p>
+<p class="text-xs font-bold text-white/70">Abr</p>
+<p class="text-xs font-bold text-white/70">May</p>
+</div>
+</div>
+<div class="rounded-xl border border-white/10 bg-surface-dark p-6">
+<p class="text-base font-medium text-white">Ingresos mensuales</p>
+<p class="text-4xl font-bold text-white">$12,000</p>
+<div class="flex items-center gap-2">
+<p class="text-sm text-white/70">Este año</p>
+<p class="text-sm font-medium text-green-500">+8%</p>
+</div>
+<div class="mt-6 flex h-48 flex-1 flex-col justify-end">
+<svg fill="none" height="148" preserveAspectRatio="none" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_1131_5935_dark)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#16a34a" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1131_5935_dark" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#16a34a" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#16a34a" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="mt-2 flex justify-around">
+<p class="text-xs font-bold text-white/70">Ene</p>
+<p class="text-xs font-bold text-white/70">Feb</p>
+<p class="text-xs font-bold text-white/70">Mar</p>
+<p class="text-xs font-bold text-white/70">Abr</p>
+<p class="text-xs font-bold text-white/70">May</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class="sticky bottom-0 border-t border-white/10 bg-background-dark px-4 pt-2 pb-4">
+<nav class="flex justify-around">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl"> dashboard </span>
+<p class="text-xs font-medium">Panel</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl"> map </span>
+<p class="text-xs font-medium">Tours</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl"> calendar_today </span>
+<p class="text-xs font-medium">Reservas</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl"> group </span>
+<p class="text-xs font-medium">Clientes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl"> settings </span>
+<p class="text-xs font-medium">Ajustes</p>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>

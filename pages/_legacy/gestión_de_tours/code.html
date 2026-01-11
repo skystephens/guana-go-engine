@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Tours (Modo Oscuro)</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22c55e",
+                        "secondary-yellow": "#facc15",
+                        "secondary-red": "#ef4444",
+                        "background-light": "#f7fee7",
+                        "background-dark": "#18181b",
+                        "foreground-light": "#1c1917",
+                        "foreground-dark": "#f8fafc",
+                        "subtle-light": "#ecfccb",
+                        "subtle-dark": "#27272a",
+                        "muted-light": "#57534e",
+                        "muted-dark": "#a1a1aa"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div>
+<header class="flex items-center justify-between p-4 bg-background-dark border-b border-subtle-dark sticky top-0 z-10">
+<button class="text-foreground-dark">
+<svg class="h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 18l-6-6 6-6"></path>
+</svg>
+</button>
+<h1 class="text-lg font-bold text-foreground-dark">Gestión de Tours</h1>
+<div class="w-6"></div>
+</header>
+<main class="p-4 space-y-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="text-muted-dark" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</span>
+<input class="w-full rounded-lg border-none bg-subtle-dark py-3 pl-10 pr-4 text-foreground-dark placeholder-muted-dark focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Buscar tours" type="text"/>
+</div>
+<div class="flex space-x-3">
+<button class="flex items-center gap-2 rounded-lg bg-subtle-dark px-4 py-2 text-sm font-medium text-foreground-dark">
+<span>Estado</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</button>
+<button class="flex items-center gap-2 rounded-lg bg-subtle-dark px-4 py-2 text-sm font-medium text-foreground-dark">
+<span>Precio</span>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</button>
+<button class="flex items-center gap-2 rounded-lg bg-subtle-dark px-4 py-2 text-sm font-medium text-foreground-dark">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 6h18M7 12h10M10 18h4"></path>
+</svg>
+<span>Filtros</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 rounded-lg bg-subtle-dark p-3">
+<img alt="Tour de buceo en el arrecife" class="h-16 w-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKE5hEVkD4EitRDKgn8SDQNgc0F_nyz0IlJJdY7xJ6Y--fyHsN_8tr_sRYv-lk2BRMEOj5ys6bbuiOgRCxL9UUj3j9jLMWOuTikiUWN-aSSNBT4w66XT63MrFjH85f92OhcRY2yB5CLogDaRGFQ0TO_001IMz5fqYEsFKq3cSBwa8S884THTQnnPjXyXwdCnldwE-cOp1eMYESvZ5BfUPsKOejpxxOH-a06RJdFj9MoS44-8am8SM_q91cZ6r0XaDr_pmIbke9imA"/>
+<div class="flex-1">
+<p class="font-bold text-foreground-dark">Tour de buceo en el arrecife</p>
+<p class="text-sm text-muted-dark">$500.000</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-green-500/20 text-green-400">Activo</span>
+</div>
+</div>
+<button class="text-muted-dark">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+<circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-subtle-dark p-3">
+<img alt="Excursión a Johnny Cay" class="h-16 w-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoElybQ43_FNmGnuFRUSxXZN-BC-R8RtALfg7IcB-gL6Qt56hw0ows6J3mHioPlXaq6YJ3_pS-kie0WIcmtHVMCpAnt7FxdgV8gfElqZLkwEmvv2jS2-orBGUZAY5nPu2U8ZjvACYF2TZtHFJF1IIk4DRxxbHt9G90irDRSAux4W3A2mH-bx4bk7YJsG-Zb2838yl56mXOt9QvHNkFpJXW2z4cu9KdqBNU62W-SQ7_05Gi3EOmkz-5IE-22DS1EmGilLqErSKNgg"/>
+<div class="flex-1">
+<p class="font-bold text-foreground-dark">Excursión a Johnny Cay</p>
+<p class="text-sm text-muted-dark">$300.000</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-red-500/20 text-red-400">Inactivo</span>
+</div>
+</div>
+<button class="text-muted-dark">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+<circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-subtle-dark p-3">
+<img alt="Paseo en barco por la bahía" class="h-16 w-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEa-OqJA_r4ClXOaaDP9wfTqUY4mntk09vLfR2X_qo4dc12QgOdrJYS2rIz29TW2_kozxCrka8NqYaBhcpiqkFgNkFGehhSAjGIzViNvVioIb9OVQLgfIY8V53QHk-Vq76L6bJTCmqzDZOosIyVWOxtABs6vxkhon2Tzzix4fNXR5Ang12QORwEi44R--ir6onREa9VJr2cIXqS8KGY771oENfFn7RGvnrFyFXNxAROo07Zri4oy8-kaRlkcuaB6CSFgSEwPrAono"/>
+<div class="flex-1">
+<p class="font-bold text-foreground-dark">Paseo en barco por la bahía</p>
+<p class="text-sm text-muted-dark">$200.000</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-yellow-500/20 text-yellow-400">Borrador</span>
+</div>
+</div>
+<button class="text-muted-dark">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="1"></circle>
+<circle cx="19" cy="12" r="1"></circle>
+<circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+</div>
+</main>
+</div>
+<footer class="sticky bottom-0 bg-background-dark">
+<div class="p-4">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-4 text-base font-bold text-white shadow-lg shadow-primary/30">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+<span>Nuevo tour</span>
+</button>
+</div>
+<nav class="flex justify-around border-t border-subtle-dark py-2">
+<a class="flex flex-col items-center gap-1 text-muted-dark" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="text-xs font-medium">Panel</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<svg class="text-primary" fill="currentColor" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.28 4.22a2.016 2.016 0 0 0-2.56 0L16 6.94l-2.72-2.72a2.016 2.016 0 0 0-2.56 0L8 6.94 5.28 4.22a2.016 2.016 0 0 0-2.56 0L1.45 5.47a2.016 2.016 0 0 0 0 2.56L4.17 10.75l2.72 2.72a2.016 2.016 0 0 0 2.56 0L12 10.75l2.72 2.72a2.016 2.016 0 0 0 2.56 0l2.72-2.72 2.72-2.72a2.016 2.016 0 0 0 0-2.56zM8 18h8v2H8z"></path>
+</svg>
+<span class="text-xs font-medium">Tours</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-muted-dark" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span class="text-xs font-medium">Reservas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-muted-dark" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+<span class="text-xs font-medium">Clientes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-muted-dark" href="#">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="text-xs font-medium">Ajustes</span>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>

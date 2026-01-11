@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Dashboard Aliado (Modo Oscuro)</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#141414",
+              "background-light": "#f7f7f7",
+              "background-dark": "#121212",
+              "surface-dark": "#1E1E1E",
+              "guanago-green": "#34D399",
+              "guanago-yellow": "#FBBF24",
+              "guanago-red": "#F87171"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-background-light">
+<div class="relative flex min-h-screen w-full flex-col justify-between group/design-root overflow-x-hidden bg-background-dark">
+<div class="flex-grow">
+<header class="flex items-center p-4 pb-2 justify-between">
+<button class="p-2 text-background-light">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<h1 class="text-lg font-bold flex-1 text-center">Panel de Administración</h1>
+<div class="w-10"></div>
+</header>
+<main class="p-4 space-y-6">
+<section>
+<h2 class="text-2xl font-bold mb-4">Próximas Misiones</h2>
+<div class="space-y-3">
+<div class="bg-surface-dark p-3 rounded-lg flex items-center gap-4">
+<img alt="Avatar de Sofia Ramirez" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsZwgCMwN0TsOLJh12a6dpFDYKmpBRXbi0CbepRC0mBmOTX1OHjYESbb5_gHGzv6-gFp5SN2uT7FFg0EJcTyBOy5S5P8l69CMgpRLQSbhRZ698HHnRgvV1kBwydo-9LodVjHlTCypceyNpi5g1QhA5FI5u0WGtA9udCsjp6I7bBkbZodos12C_iC-132K99VKwNNBqlDY-zaOAAQ65Dx74YWxnkdBxD-pGcVPbWwQU-8hI4iZGK1cfUPRzotw4FywZt96gEEDx5Oo"/>
+<div class="flex-1">
+<p class="font-bold">Cliente: Sofia Ramirez</p>
+<p class="text-sm text-background-light/70">10:00 AM</p>
+</div>
+</div>
+<div class="bg-surface-dark p-3 rounded-lg flex items-center gap-4">
+<img alt="Avatar de Mateo Vargas" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMJbZOENQvbOSFwyY4vxUgWlplIyA5ky5ONHDnR7Q7yRBILPjN-8zjBh4PFYgxX4fCzWxvxC8rq9M0oFm2PQAMQrNwNoPBoU3DKy_RPVuwFiB-n0DZJnXzImfyevKVSWz_zdVpgTy4phmHgg-KHulhWhZQHRf4XFv2wR89Rbb4SrDMlXxV5P5u15RbkA8ESYB76de-mNMfyl0tTkYGJoMNB1NSXUjTnAxzx29JgCLNh8KMslzQbq0xPMzi48Z8izNggXJT8cChe_4"/>
+<div class="flex-1">
+<p class="font-bold">Cliente: Mateo Vargas</p>
+<p class="text-sm text-background-light/70">11:30 AM</p>
+</div>
+</div>
+<div class="bg-surface-dark p-3 rounded-lg flex items-center gap-4">
+<img alt="Avatar de Isabella Torres" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYfiqybST8lVo2i6NCX4W6eD1xYkxBSFObFzmdXTrWUEfVGnZXeSzhH8d27-96Tv7QC1qZrKlH_OGzeJw1jY_oVDDuetwzoKhxsyhE0Pv_zL-N9TesGkW5XG_ILG_FRie2OPKdbDPFpqRks-6yhkY5wKOO8kbZwO5L_xCYIFjulQ1VEG0AfZOUTOgEGompZi9YiuJR1RVZ-AdAfwsbWMbCAjxSyJGa-SRW1MHeCzAR-nQ5y2U2YA2KWqirvstvF-uqBBCvNYQzFps"/>
+<div class="flex-1">
+<p class="font-bold">Cliente: Isabella Torres</p>
+<p class="text-sm text-background-light/70">13:00 PM</p>
+</div>
+</div>
+</div>
+</section>
+<button class="w-full bg-guanago-green text-primary font-bold py-4 px-5 rounded-lg text-sm tracking-wider shadow-lg shadow-guanago-green/20">
+            ESCANEAR QR PARA CANJEAR
+          </button>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-dark p-4 rounded-lg text-center">
+<p class="text-sm font-medium text-background-light/80">Ingresos del Día</p>
+<p class="text-3xl font-bold text-guanago-green">$250</p>
+</div>
+<div class="bg-surface-dark p-4 rounded-lg text-center">
+<p class="text-sm font-medium text-background-light/80">Tokens Recibidos Hoy</p>
+<p class="text-3xl font-bold text-guanago-yellow">150</p>
+</div>
+</div>
+<section>
+<h2 class="text-2xl font-bold mb-4">Notificaciones Recientes</h2>
+<div class="space-y-4">
+<div class="bg-surface-dark p-3 rounded-lg flex items-start gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-guanago-red/20">
+<span class="material-symbols-outlined text-guanago-red">notifications</span>
+</div>
+<p class="text-sm flex-1 pt-2">Nuevo cliente: Sofia Ramirez ha reservado para las 10:00 AM.</p>
+</div>
+<div class="bg-surface-dark p-3 rounded-lg flex items-start gap-4">
+<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-guanago-yellow/20">
+<span class="material-symbols-outlined text-guanago-yellow">token</span>
+</div>
+<p class="text-sm flex-1 pt-2">Has recibido 50 tokens por la reserva de Mateo Vargas.</p>
+</div>
+</div>
+</section>
+</main>
+</div>
+<nav class="sticky bottom-0 bg-surface-dark border-t border-background-light/10">
+<div class="flex justify-around items-center px-2 pt-2 pb-4">
+<a class="flex flex-col items-center gap-1 text-guanago-green" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-background-light/60" href="#">
+<span class="material-symbols-outlined !fill-0">calendar_month</span>
+<span class="text-xs font-medium">Reservas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-background-light/60" href="#">
+<span class="material-symbols-outlined !fill-0">qr_code_scanner</span>
+<span class="text-xs font-medium">Canje</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-background-light/60" href="#">
+<span class="material-symbols-outlined !fill-0">account_balance_wallet</span>
+<span class="text-xs font-medium">Billetera</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-background-light/60" href="#">
+<span class="material-symbols-outlined !fill-0">chat_bubble</span>
+<span class="text-xs font-medium">Comentarios</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

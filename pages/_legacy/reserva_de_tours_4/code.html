@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detalles de Traslado Taxi (con Logo)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a34a",
+                        "secondary-yellow": "#facc15",
+                        "secondary-red": "#dc2626",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display text-slate-800">
+<div class="flex flex-col min-h-screen">
+<main class="flex-grow">
+<div class="relative">
+<img alt="Mapa de San Andrés" class="w-full h-64 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDkdP5jClW2ItzWcCXxEuP2_wggSQiNPHfgyeiTV2Ylmbp9RzoJTmpontSGy-OcwP-eNmlF4JN60yXa8Yhu3HeCi1CuUcgqjqfLKKLOp9bpp73DlRGmMHWE4zqdH4A2csexWoUTP04JFsSmn12xfr-ODfZNOqDVeM25HlmfvqLUnOPGLNsfiBcvdxU-jycDsahqzW7tIbh9MAAU1uJxByNgc7re-lyAbzznyVFVYomG-Zn7kbzA-1shwlTiDgpVW6zeqETunKRYUw"/>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute top-0 left-0 right-0 p-4 pt-14 flex items-center justify-between z-10">
+<a class="bg-white/70 backdrop-blur-sm p-2 rounded-full" href="#">
+<span class="material-symbols-outlined text-slate-900">arrow_back_ios_new</span>
+</a>
+<div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-white/50">
+<svg class="w-16 h-16 text-slate-800" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<div class="w-10"></div>
+</div>
+<div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background-light to-transparent"></div>
+</div>
+<div class="p-4 -mt-8 relative z-10">
+<div class="bg-white rounded-xl p-4 shadow-lg mb-6">
+<h1 class="text-2xl font-bold text-slate-900 mb-2">Taxi desde Aeropuerto</h1>
+<p class="text-slate-500 mb-4">Llega a tu hotel sin complicaciones.</p>
+<div class="space-y-4 mb-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1, 'wght' 500;">flight_takeoff</span>
+<div>
+<p class="text-xs text-slate-400">Origen</p>
+<p class="font-medium text-slate-800">Aeropuerto Internacional Gustavo Rojas Pinilla</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-500 mt-1" style="font-variation-settings: 'FILL' 1, 'wght' 500;">location_on</span>
+<div>
+<p class="text-xs text-slate-400">Destino</p>
+<p class="font-medium text-slate-800">Hotel Decameron Isleño</p>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 pt-4 flex justify-between items-center">
+<p class="text-sm text-slate-500">Precio</p>
+<p class="text-2xl font-bold text-primary">$35.000 <span class="text-base font-medium text-slate-500">/ viaje</span></p>
+</div>
+</div>
+<div class="mb-6">
+<h2 class="text-xl font-bold mb-3 text-slate-900">Opciones de Vehículo</h2>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center p-3 border-2 border-primary rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">directions_car</span>
+<span class="text-sm font-semibold mt-1">Estándar</span>
+<span class="text-xs text-slate-500">4 pax</span>
+</button>
+<button class="flex flex-col items-center p-3 border border-slate-300 rounded-lg bg-white text-slate-600">
+<span class="material-symbols-outlined text-3xl">car_rental</span>
+<span class="text-sm font-semibold mt-1">Van</span>
+<span class="text-xs text-slate-500">7 pax</span>
+</button>
+<button class="flex flex-col items-center p-3 border border-slate-300 rounded-lg bg-white text-slate-600">
+<span class="material-symbols-outlined text-3xl">local_taxi</span>
+<span class="text-sm font-semibold mt-1">Premium</span>
+<span class="text-xs text-slate-500">4 pax</span>
+</button>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-bold mb-3 text-slate-900">Acerca del Traslado</h2>
+<div class="text-slate-600 leading-relaxed space-y-4">
+<p>Nuestro servicio de taxi te garantiza un viaje seguro y cómodo desde el aeropuerto hasta tu hotel. Un conductor profesional te estará esperando a tu llegada.</p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/80 text-xl mt-0.5">timer</span>
+<span><span class="font-semibold">Tiempo estimado:</span> 15 - 20 minutos.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/80 text-xl mt-0.5">luggage</span>
+<span><span class="font-semibold">Equipaje:</span> Incluye 1 maleta grande y 1 de mano por pasajero.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/80 text-xl mt-0.5">info</span>
+<span><span class="font-semibold">Instrucciones:</span> Al salir de la terminal, busca a nuestro representante con un cartel con tu nombre.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-white/90 backdrop-blur-sm border-t border-slate-200">
+<div class="p-4">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/30">
+                Solicitar Ahora
+            </button>
+</div>
+</footer>
+</div>
+</body></html>

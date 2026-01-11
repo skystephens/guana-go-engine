@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión Reservas Aliado (Modo Oscuro)</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#22C55E", // Verde principal
+                        "warning": "#FBBF24", // Amarillo
+                        "danger": "#EF4444",  // Rojo
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#121212",
+                        "surface-dark": "#1E1E1E",
+                        "text-light": "#FFFFFF",
+                        "text-dark-secondary": "#A3A3A3"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-text-light">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between">
+<div class="flex-grow">
+<header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center p-4">
+<button class="text-text-light">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold text-text-light pr-6">Reservas</h1>
+<button class="text-text-light">
+<span class="material-symbols-outlined">calendar_today</span>
+</button>
+</div>
+<div class="border-b border-white/10 px-4">
+<nav class="flex gap-4">
+<a class="py-3 text-sm font-bold border-b-2 border-primary text-primary" href="#">Próximas</a>
+<a class="py-3 text-sm font-medium border-b-2 border-transparent text-text-dark-secondary hover:text-text-light transition-colors" href="#">Completadas</a>
+<a class="py-3 text-sm font-medium border-b-2 border-transparent text-text-dark-secondary hover:text-text-light transition-colors" href="#">Canceladas</a>
+</nav>
+</div>
+</header>
+<main class="p-4 space-y-3">
+<div class="bg-surface-dark p-4 rounded-xl">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-text-light">Sofía García</p>
+<p class="text-sm text-text-dark-secondary mt-1">20 de mayo, 18:00 · 2 personas</p>
+</div>
+<span class="text-sm font-medium bg-primary/20 text-primary py-1 px-3 rounded-full">Cena</span>
+</div>
+</div>
+<div class="bg-surface-dark p-4 rounded-xl">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-text-light">Carlos López</p>
+<p class="text-sm text-text-dark-secondary mt-1">21 de mayo, 12:30 · 4 personas</p>
+</div>
+<span class="text-sm font-medium bg-primary/20 text-primary py-1 px-3 rounded-full">Almuerzo</span>
+</div>
+</div>
+<div class="bg-surface-dark p-4 rounded-xl">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-text-light">Ana Martínez</p>
+<p class="text-sm text-text-dark-secondary mt-1">22 de mayo, 20:00 · 3 personas</p>
+</div>
+<span class="text-sm font-medium bg-primary/20 text-primary py-1 px-3 rounded-full">Cena</span>
+</div>
+</div>
+<div class="bg-surface-dark p-4 rounded-xl">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-text-light">Javier Pérez</p>
+<p class="text-sm text-text-dark-secondary mt-1">23 de mayo, 19:00 · 2 personas</p>
+</div>
+<span class="text-sm font-medium bg-warning/20 text-warning py-1 px-3 rounded-full">Pendiente</span>
+</div>
+</div>
+</main>
+</div>
+<footer class="sticky bottom-0 bg-background-dark/80 backdrop-blur-sm border-t border-white/10">
+<nav class="flex justify-around p-2">
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-dark-secondary hover:text-text-light transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-medium">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">calendar_month</span>
+<span class="text-xs font-bold">Reservas</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-dark-secondary hover:text-text-light transition-colors" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-xs font-medium">Canje</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-dark-secondary hover:text-text-light transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-xs font-medium">Billetera</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-dark-secondary hover:text-text-light transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-xs font-medium">Comentarios</span>
+</a>
+</nav>
+<div class="h-safe-bottom bg-background-dark"></div>
+</footer>
+</div>
+
+</body></html>
